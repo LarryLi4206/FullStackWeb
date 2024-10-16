@@ -1,0 +1,28 @@
+一、跨平台的Filter
+
+//跨平台(前後端分離的程式碼)
+@WebFilter(urlPatterns= {"/*"})
+public class CorssPlatformFilter implements Filter {
+
+    public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
+        HttpServletResponse response = (HttpServletResponse) res;
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        response.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+        response.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+        response.setHeader("Access-Control-Expose-Headers", "Location");
+        chain.doFilter(req, res);
+    }
+
+    public void init(FilterConfig filterConfig) {}
+
+    public void destroy() {}
+
+}
+
+
+二、編碼的Filter
+
+
+
+
+

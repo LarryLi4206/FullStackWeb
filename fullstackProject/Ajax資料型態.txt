@@ -1,0 +1,23 @@
+在使用 Ajax 時，contentType 和 dataType 是兩個常用的設定，通常會有以下幾種資料型態：
+
+一、contentType
+1.contentType 是指發送請求時的資料類型，常見的有：
+
+2.application/x-www-form-urlencoded：這是表單的默認類型，用於提交表單數據。
+3.multipart/form-data：用於上傳文件的表單。
+4.application/json：用於發送 JSON 格式的數據。
+5.text/plain：用於發送純文本數據。
+6.application/xml：用於發送 XML 格式的數據。
+
+二、dataType
+dataType 是指預期從伺服器返回的資料類型，常見的有：
+
+1.json：伺服器返回 JSON 格式的數據。
+2.xml：伺服器返回 XML 格式的數據。
+3.html：伺服器返回 HTML 格式的數據。
+4.text：伺服器返回純文本數據。
+5.jsonp：用於跨域請求的 JSONP 格式。
+這些設定可以根據你的需求進行選擇，以確保資料能夠正確地傳遞和解析。
+
+
+

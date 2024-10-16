@@ -1,0 +1,26 @@
+JQuery---資源，可下載成離線版使用
+Google的-JQuery
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+JQuery-的官網
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+
+Boostrap--四樣網路資源
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
+
+Spring--前端資源
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+
+JSTL
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+
+
