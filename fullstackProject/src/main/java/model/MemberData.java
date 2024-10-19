@@ -1,7 +1,14 @@
 package model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="memberData")
 public class MemberData {
 	//新增員工不能簡易註冊，直接完整註冊(同頁面但是必須判斷員工OR客戶)
+	@Id
 	private Integer id;
 	//需要設計(老闆BM(最高權限),人資PM(新增修改查詢全部人事資料確認客戶VIP資格),會計CM(改產品價格),一般員工AM(負責銷售)
 	//

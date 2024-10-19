@@ -54,12 +54,26 @@ C槽\user\使用者名稱\.m2\repository\根據載入時的groupID找出載入�
 			<artifactId>spring-webmvc</artifactId>
 			<version>5.2.25.RELEASE</version>
 		</dependency>
+		
+<!-- SpringJDBC -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>5.2.25.RELEASE</version>
+		</dependency>
+		
 <!-- hibernate -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>5.4.30.Final</version>
 		</dependency>		
+<!--避免一對多遞迴 -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.13.0</version>
+		</dependency>
 
 <!-- Swagger測試功能工具 -->
 <!--Swagger2用得到的其他JAR  -->

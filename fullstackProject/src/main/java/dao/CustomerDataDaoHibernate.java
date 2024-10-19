@@ -81,12 +81,12 @@ public class CustomerDataDaoHibernate {
 		if(cutomerData02!=null) {
 			System.out.println(cutomerData02.getId());
 			System.out.println(cutomerData02.getCustomer_id());
-			cutomerData02.setCustomer_name("123456");
-			cutomerData02.setAccount("1231465");
-			cutomerData02.setPassword("123456");
-			cutomerData02.setAddress("123456");
-			cutomerData02.setMail_address("123465");
-			cutomerData02.setTelephone("12456");
+			cutomerData02.setCustomer_name("222");
+			cutomerData02.setAccount("333");
+			cutomerData02.setPassword("444");
+			cutomerData02.setAddress("55512");
+			cutomerData02.setMail_address("666");
+			cutomerData02.setTelephone("777");
 			System.out.println(cutomerData02.getVip());
 			
 			c_dao.updateCustomerData(cutomerData02);
@@ -94,9 +94,6 @@ public class CustomerDataDaoHibernate {
 		}else {
 			System.out.println("LOGIN FAIL");
 		}
-		
-		
-		
 		
 	}
 	//驗證OK(兩種語法都行)
@@ -119,23 +116,23 @@ public class CustomerDataDaoHibernate {
 	
 	//全部資料--OK
 	public List <CustomerData> getAllCustomerData() {
-		Session mgr=GetConnection.getHibernateConnection();
-   	 	return mgr.createQuery("select u from CustomerData u").list();
+		Session session=GetConnection.getHibernateConnection();
+   	 	return session.createQuery("select u from CustomerData u").list();
    
 	}
 	
 	//新增資料--驗證OK
 	public CustomerData addCustomerData(CustomerData customerData) {
-		Session mgr=GetConnection.getHibernateConnection();
-    	
+		Session session=GetConnection.getHibernateConnection();
+    	System.out.println("HB--"+customerData.getCustomer_id());
     	try {
-    		mgr.getTransaction().begin();
-    		mgr.persist(customerData);
+    		session.getTransaction().begin();
+    		session.persist(customerData);
 //    		System.out.println(cd+"add success");
-    		mgr.getTransaction().commit();
+    		session.getTransaction().commit();
     		return customerData;
     	}catch(Exception e){
-    		
+    		System.out.println("error"+e.getMessage());
     	}
     	
    	 	return null;
@@ -146,8 +143,8 @@ public class CustomerDataDaoHibernate {
 	public CustomerData getFinalCustomerData() {
 		CustomerData customerData=new CustomerData();
 		
-		Session mgr=GetConnection.getHibernateConnection();
-   	 	Query query=mgr.createQuery("select u from CustomerData u ORDER BY u.id DESC",CustomerData.class);
+		Session session=GetConnection.getHibernateConnection();
+   	 	Query query=session.createQuery("select u from CustomerData u ORDER BY u.id DESC",CustomerData.class);
    	 	//排序大到小取第一筆資料
    	 	query.setMaxResults(1);
    	 	//將取得資料轉成物件回傳
@@ -172,24 +169,19 @@ public class CustomerDataDaoHibernate {
 		
 	}
 	
-	//更新資料
+	//更新資料--OK
 	public void updateCustomerData(CustomerData customerData) {
 		Session mgr=GetConnection.getHibernateConnection();
     	
     	try {
     		mgr.getTransaction().begin();
     		mgr.merge(customerData);
-    		//System.out.println(cd+"add success");
+    		System.out.println("update success");
     		mgr.getTransaction().commit();
     	}catch(Exception e){
-    		mgr.getTransaction().rollback();
+    		//mgr.getTransaction().rollback();
     		System.out.println("fail"+e.getMessage());
     	}
     	
-		
-		
 	}
-	
-	
-	
 }

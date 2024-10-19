@@ -9,9 +9,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h1>HOME PAGE</h1>
 
  
-
-
 </body>
 </html>

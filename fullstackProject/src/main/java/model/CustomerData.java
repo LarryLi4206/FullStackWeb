@@ -1,6 +1,8 @@
 package model;
 import java.io.Serializable;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -9,8 +11,10 @@ import javax.persistence.Table;
 @Table(name="CustomerData")
 public class CustomerData implements Serializable{
 	@Id
+	//自動增長ID設定
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
-	//customer_id自動加入C開頭文字加ID
+	//customer_id自動加入M開頭文字加ID
 	private String customer_id;
 	private String customer_name;
 	private String account;

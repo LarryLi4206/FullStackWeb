@@ -11,12 +11,15 @@
       http://www.springframework.org/schema/mvc
       http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd">
 
-	<context:component-scan
-		base-package="controller.springMVC" /> <!--建立對應Package(必須放置controller程式) -->
+	<context:component-scan base-package="controller.springMVC" /> <!--建立對應Package(必須放置controller程式) -->
 	<context:annotation-config />
+	
+	<!-- 建立配置靜態資源可直接讀取 -->
+	<mvc:resources location="/html/**" mapping="/html/"></mvc:resources>
+	<mvc:resources location="/images/**" mapping="/images/"></mvc:resources>
+	
 	<mvc:annotation-driven></mvc:annotation-driven>   <!--處理JSON資料格式 -->
-	<bean
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix">
 			<value>/WEB-INF/jsp/</value><!--建立對應View -->
 		</property>
